@@ -49,11 +49,28 @@ public class Main {
         System.out.println();
 
 //        6. Просортувати масив в порядку зростання
-        for(int i :array){
+//        Insertion sort
+        for (int i =1; i< array.length; ++i){
+            int temp = array[i];
+            int j=i-1;
+            while (j>=0 && array[j]>temp) {
+            array[j+1]=array[j];
+            j=j-1;
+        }
+        array[j+1]=temp;
 
         }
+//        System.out.println("Test output of the elements of the sorted array:");
+//        for (int i = 0; i < array.length; ++i) {
+//            System.out.print(array[i] + " ");
+//        }
+//        System.out.println();
+    }
+
 
 //        7. Вивести найменше значення в масиві
+
+
 //        8. Вивести найбільше значення масиву
 //        9. Вивести суму значень всіх парних індексів
 //        10. Вивести перших 20 символів з таблиці ASCI
@@ -63,4 +80,4 @@ public class Main {
 
 
     }
-}
+
