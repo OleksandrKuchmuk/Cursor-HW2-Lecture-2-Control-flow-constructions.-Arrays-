@@ -27,7 +27,7 @@ public class Main {
         for (int i : array) {
             count += i;
             if (i % 3 == 0) {
-                countDivisoin3 += i;
+                countDivisoin3 += i;   //сума всіх значень кратних 3
             }
         }
         count /= array.length;
@@ -61,7 +61,13 @@ public class Main {
 //        7. Вивести найменше значення в масиві
         for (int i = 0; i < array.length; i++) {
             if (array[i] <= smallestValue) {
-                smallestValue = array[i];
+                smallestValue = array[i];      //найменше значення в масиві
+            }
+            if (array[i] >= largestValue) {
+                largestValue = array[i];       //найбільше значення масиву
+            }
+            if (i % 2 == 0) {
+                summOfAllPairedIndices += array[i];   //сума значень всіх парних індексів
             }
         }
         System.out.println("The smallest value of the array:  " + smallestValue);
@@ -69,21 +75,13 @@ public class Main {
 
 
 //        8. Вивести найбільше значення масиву
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] >= largestValue) {
-                largestValue = array[i];
-            }
-        }
+
         System.out.println("The largest value of the array:   " + largestValue);
         System.out.println();
 
 
 //        9. Вивести суму значень всіх парних індексів
-        for (int i = 0; i < array.length; i++) {
-            if (i % 2 == 0) {
-                summOfAllPairedIndices += array[i];
-            }
-        }
+
         System.out.println("The sum of all paired indices:   " + summOfAllPairedIndices);
         System.out.println();
 
@@ -92,11 +90,34 @@ public class Main {
         for (char i = 32; i < 52; i++) {
             System.out.print(i + " ");
         }
+        System.out.println();
 //
 //* (завдання з зірочкою)
 //        Заповнити масив рандомними числами, вивести їх, потім поміняти місцями парні з непарними
+        System.out.println();
+        System.out.println("Task with an asterisk:");
+        int evenNumber, notAnEvenNumber;
+        int[] newArray = new int[100];
+        for (int i = 0; i < newArray.length; i++) {
+            Random randomNumbers = new Random();
+            newArray[i] = randomNumbers.nextInt(500);
+        }
+        for (int i : newArray) {
+            System.out.print(i + " ");
+        }
 
-
+//        for (int i=0; i<newArray.length; i++){
+//            if (newArray[i]%2 == 0){
+//                evenNumber = newArray[i];
+//            }
+//            for (int j=0; j< newArray.length; j++){
+//                if (array[j]%2 !=0){
+//                    notAnEvenNumber = newArray[j];
+//                }
+//            }
+//        }
+//        System.out.println();
     }
 }
+
 
